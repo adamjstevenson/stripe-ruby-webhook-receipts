@@ -1,6 +1,7 @@
 # Custom Stripe subscription email receipts with Mailgun
 
-A basic Sinatra example using Stripe's webhook functionality and the [Mailgun Ruby](https://github.com/mailgun/mailgun-ruby) gem to send custom email receipts to customers when the `invoice.payment_succeeded` event is received. 
+A basic example app built with Sinatra that uses Stripe's webhook functionality and the [Mailgun Ruby gem](https://github.com/mailgun/mailgun-ruby) to send custom email receipts to customers when the `invoice.payment_succeeded` event is received.
+
 Modify the webhook.rb script and [deploy this on Heroku](https://devcenter.heroku.com/articles/rack) or another service to send email receipts to your Stripe customers. 
 
 ![Example receipt](/receipt_html.png)
@@ -13,18 +14,18 @@ Modify the webhook.rb script and [deploy this on Heroku](https://devcenter.herok
 
 ## Getting started
 
-1. Create and configure a [Mailgun account](https://mailgun.com/signup) to send emails from your domain. You can also just test [for free](https://www.mailgun.com/pricing) and use their sandbox domain until you're ready to configure your own.
+Create and configure a [Mailgun account](https://mailgun.com/signup) to send emails from your domain. You can also just test [for free](https://www.mailgun.com/pricing) and use their sandbox domain until you're ready to configure your own.
 
-2. Clone this repository:
+Clone this repository:
 ```
 git clone https://github.com/adamjstevenson/stripe-webhook-receipts.git
 ```
 
-3. Run `bundle install`
+Run `bundle install`
 
-4. Modify **webhook.rb** and **views/html_email.erb** to add your own domain and site name in place of `SITE-NAME` and `YOUR-DOMAIN.COM`
+Modify **webhook.rb** and **views/html_email.erb** to add your own domain and site name in place of `SITE-NAME` and `YOUR-DOMAIN.COM`
 
-5. Obtain your API keys from your [Stripe dashboard](https://dashboard.stripe.com/account/apikeys) and [Mailgun settings](https://mailgun.com/app/domains). Set these as environment variables when running this app. 
+Obtain your API keys from your [Stripe dashboard](https://dashboard.stripe.com/account/apikeys) and [Mailgun settings](https://mailgun.com/app/domains). Set these as environment variables when running this app. 
 
 ## Testing
 
@@ -36,7 +37,7 @@ STRIPE_KEY='sk_test_YOUR-STRIPE-KEY' MAILGUN_KEY='key-YOUR-MAILGUN-KEY' ruby web
 
 Once this is running locally, you can use a service like [Ngrok](https://ngrok.com) to make the endpoint accessible at a URL like https://abcd1234.ngrok.io/webhook, then add the webhook endpoint in the [Stripe dashboard](https://dashboard.stripe.com/account/webhooks). 
 
-You can find [test cards](https://stripe.com/docs/testing) on Stripe. 
+You can find [test cards](https://stripe.com/docs/testing) on Stripe to create test customers and subscriptions. 
 
 ## Other notes
 
