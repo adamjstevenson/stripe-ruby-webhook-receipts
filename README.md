@@ -3,7 +3,7 @@
 A basic Sinatra example using Stripe's webhook functionality and the Mailgun Ruby gem to send custom email receipts to customers when the `invoice.payment_succeeded` event is received. 
 Modify the webhook.rb script and [deploy this on Heroku](https://devcenter.heroku.com/articles/rack) or another service to send email receipts to your Stripe customers. 
 
-![Example receipt](/receipt_email.png)
+![Example receipt](/receipt_html.png)
 
 ## Features
 
